@@ -1,166 +1,307 @@
 # 🚀 SQL Data Warehouse & Analytics Project
 
-## 📌 Project Overview
+## 📌 Overview
 
-This project demonstrates the design and implementation of a modern **Data Warehouse and Analytics Solution** using Microsoft SQL Server. The objective was to build an end-to-end data warehousing pipeline capable of integrating data from multiple business systems, transforming raw data into trusted business information, and delivering analytics-ready datasets for reporting and decision-making.
+This project demonstrates the end-to-end development of a modern Data Warehouse and Analytics solution using Microsoft SQL Server. The project covers the complete data lifecycle, from ingesting raw data from multiple source systems to transforming it into business-ready datasets and generating actionable insights through Exploratory Data Analysis (EDA).
 
-The solution follows the **Medallion Architecture (Bronze → Silver → Gold)** framework and showcases industry-standard practices in Data Engineering, Data Modeling, Data Quality Management, and Analytics.
+The solution follows the **Medallion Architecture (Bronze → Silver → Gold)** framework and incorporates industry-standard practices in Data Engineering, Data Modeling, Data Quality Management, and Data Analytics.
 
 ---
 
-## 🏗️ Data Architecture
+## 🎯 Project Objectives
 
-<p align="center">
-  <img src="docs/data_architecture.png" width="900">
-</p>
+- Build a scalable Data Warehouse using SQL Server
+- Integrate CRM and ERP datasets into a unified analytical model
+- Develop ETL/ELT pipelines for data processing
+- Perform data cleansing and quality validation
+- Design dimensional models using Star Schema principles
+- Conduct Exploratory Data Analysis (EDA)
+- Generate business-ready insights for decision-making
 
-The project follows a layered Medallion Architecture:
+---
+
+# 🏗️ Phase 1 — Data Warehousing
+
+## Data Architecture
+
+![Data Architecture](docs/data_architecture.png)
+
+The project follows a Medallion Architecture consisting of:
 
 ### Bronze Layer
-
-* Raw data ingestion from source systems
-* Preserves source data in its original format
-* Supports auditability and traceability
+- Raw data ingestion from source systems
+- Preserves source data in its original format
+- Supports auditability and traceability
 
 ### Silver Layer
-
-* Data cleansing and standardization
-* Data quality validation
-* Business rule implementation
-* Data enrichment and transformation
+- Data cleansing and standardization
+- Data quality validation
+- Business rule implementation
+- Data enrichment and transformation
 
 ### Gold Layer
-
-* Business-ready analytical datasets
-* Dimensional modeling
-* Optimized reporting and analytics structures
-
-This architecture ensures scalability, maintainability, and clear separation of responsibilities across the data pipeline.
+- Business-ready analytical datasets
+- Dimensional modeling
+- Optimized reporting and analytics structures
 
 ---
 
 ## 🔄 Data Flow
 
-<p align="center">
-  <img src="docs/data_flow.png" width="900">
-</p>
+![Data Flow](docs/data_flow.png)
 
-The data pipeline integrates CRM and ERP datasets through a structured ETL/ELT workflow:
+### ETL / ELT Workflow
 
-1. Data Extraction from source systems
-2. Raw Data Loading into Bronze Layer
-3. Data Cleansing & Transformation in Silver Layer
-4. Data Integration & Modeling
-5. Creation of Analytics-Ready Gold Layer
-6. Business Reporting & Insights
+1. Extract data from CRM and ERP source systems
+2. Load raw data into Bronze Layer
+3. Cleanse and standardize data in Silver Layer
+4. Integrate business entities across systems
+5. Create dimensional models in Gold Layer
+6. Deliver analytics-ready datasets
 
 ---
 
-## ⭐ Data Model (Star Schema)
+## ⭐ Data Model
 
-<p align="center">
-  <img src="docs/data_model.png" width="900">
-</p>
+![Star Schema](docs/data_model.png)
 
-The Gold Layer is designed using a **Star Schema** model to support analytical reporting and high-performance querying.
+The Gold Layer is designed using a Star Schema model optimized for analytical reporting.
 
 ### Fact Table
-
-* Fact Sales
+- Fact Sales
 
 ### Dimension Tables
+- Dim Customer
+- Dim Product
+- Dim Date
 
-* Dim Customer
-* Dim Product
-
-This dimensional model enables efficient reporting on customer behavior, product performance, and sales trends.
-
----
-
-# 🎯 Project Objectives
-
-The primary objectives of this project were:
-
-* Build a scalable Data Warehouse using SQL Server
-* Integrate CRM and ERP datasets into a unified analytical model
-* Implement ETL/ELT pipelines for data processing
-* Perform data cleansing and quality validation
-* Design dimensional models using Star Schema principles
-* Generate business-ready datasets for analytics and reporting
+This structure enables high-performance analytical querying and reporting.
 
 ---
 
-# ⚙️ Key Components
+## ⚙️ Data Engineering Components
 
-## 1. Data Architecture Design
+### Data Architecture Design
+- Medallion Architecture
+- Layered Data Processing
+- Separation of Concerns
 
-Designed a Medallion Architecture consisting of Bronze, Silver, and Gold layers to support data ingestion, transformation, and analytics.
+### ETL / ELT Processing
+- Data Extraction
+- Data Loading
+- Data Transformation
 
----
+### Data Cleansing
+- Duplicate Handling
+- Missing Value Treatment
+- Data Standardization
+- Business Rule Validation
 
-## 2. ETL / ELT Pipeline Development
+### Data Integration
+- CRM + ERP Integration
+- Business Key Reconciliation
+- Master Data Alignment
 
-Developed SQL-based ETL/ELT processes to:
-
-* Extract data from source systems
-* Load raw datasets into staging environments
-* Cleanse and standardize business data
-* Integrate data across systems
-* Build analytical models
-
----
-
-## 3. Data Quality Management
-
-Implemented:
-
-* Duplicate handling
-* Missing value treatment
-* Data validation
-* Standardization rules
-* Data enrichment
-* Business rule enforcement
-
-These processes improved the reliability and consistency of analytical outputs.
+### Data Modeling
+- Dimensional Modeling
+- Fact & Dimension Design
+- Star Schema Implementation
 
 ---
 
-## 4. Data Integration
+# 📊 Phase 2 — Exploratory Data Analysis (EDA)
 
-Integrated customer, product, and sales information from multiple systems by:
+After building the Data Warehouse and Gold Layer, the next phase focused on analyzing curated business-ready data to uncover patterns, trends, and actionable insights.
 
-* Reconciling business keys
-* Mapping source entities
-* Aligning master data
-* Consolidating datasets
+## EDA Framework
 
-Resulting in a centralized and trusted source of business information.
+![EDA Roadmap](docs/eda_roadmap.png)
 
 ---
 
-## 5. Dimensional Modeling
+## 1️⃣ Database Exploration
 
-Designed analytical structures using:
+Objectives:
+- Understand database structure
+- Explore tables and schemas
+- Validate dataset readiness
 
-* Fact Tables
-* Dimension Tables
-* Star Schema Design
-
-Optimized for reporting and business intelligence use cases.
+Deliverables:
+- Database inventory
+- Table overview
+- Record counts
 
 ---
 
-## 6. Analytics & Reporting
+## 2️⃣ Dimensions Exploration
 
-Generated SQL-based analytical insights related to:
+Analyzed business dimensions including:
 
-* Customer Behavior
-* Product Performance
-* Sales Trends
-* Revenue Analysis
-* Business KPIs
+### Customer Dimension
+- Customer Distribution
+- Geographic Analysis
 
-**The final Gold Layer delivers analytics-ready datasets that can be consumed by reporting and visualization tools.**
+### Product Dimension
+- Product Categories
+- Product Subcategories
+
+Techniques:
+- DISTINCT Analysis
+- Category Exploration
+- Data Profiling
+
+---
+
+## 3️⃣ Date Exploration
+
+Analyzed temporal coverage of data.
+
+Metrics:
+- Earliest Transaction Date
+- Latest Transaction Date
+- Historical Coverage Period
+
+---
+
+## 4️⃣ Measures Exploration
+
+Analyzed key business metrics:
+
+- Total Sales
+- Total Orders
+- Quantity Sold
+- Average Selling Price
+
+SQL Functions Used:
+- SUM()
+- AVG()
+- COUNT()
+
+---
+
+## 5️⃣ Magnitude Analysis
+
+Business performance across dimensions:
+
+Examples:
+- Sales by Product Category
+- Revenue by Customer
+- Orders by Region
+- Quantity by Product
+
+---
+
+## 6️⃣ Ranking Analysis
+
+Top and Bottom Performer Identification
+
+Examples:
+
+### Customers
+- Top Revenue Customers
+- Bottom Revenue Customers
+
+### Products
+- Best-Selling Products
+- Lowest Performing Products
+
+SQL Concepts:
+- RANK()
+- DENSE_RANK()
+- ROW_NUMBER()
+
+---
+
+## 7️⃣ Change Over Time Analysis
+
+Trend analysis including:
+
+- Monthly Sales Trends
+- Revenue Growth
+- Seasonal Performance
+
+---
+
+## 8️⃣ Cumulative Analysis
+
+Running calculations:
+
+- Running Revenue
+- Running Orders
+- Cumulative Performance Tracking
+
+---
+
+## 9️⃣ Performance Analysis
+
+Business performance evaluation:
+
+- Product Performance
+- Customer Performance
+- Revenue Contribution
+
+---
+
+## 🔟 Data Segmentation
+
+Customer and Product Segmentation
+
+Examples:
+- High Value Customers
+- Medium Value Customers
+- Low Value Customers
+
+---
+
+## 1️⃣1️⃣ Part-to-Whole Analysis
+
+Contribution Analysis
+
+Examples:
+- Category Contribution %
+- Product Contribution %
+- Customer Revenue Share %
+
+---
+
+## 1️⃣2️⃣ Customer Report
+
+Customer-focused business report including:
+
+- Revenue
+- Orders
+- Purchase Behavior
+- Customer Ranking
+
+---
+
+## 1️⃣3️⃣ Product Report
+
+Product-focused business report including:
+
+- Revenue
+- Sales Volume
+- Product Ranking
+- Category Performance
+
+---
+
+# 📈 Sample Business Insights
+
+### Customer Insights
+- Identify top revenue-generating customers
+- Analyze customer contribution to total revenue
+- Segment customers by value
+
+### Product Insights
+- Best-performing products
+- Underperforming products
+- Revenue contribution by category
+
+### Sales Insights
+- Revenue trends over time
+- Seasonal sales patterns
+- Growth opportunities
 
 ---
 
@@ -168,118 +309,94 @@ Generated SQL-based analytical insights related to:
 
 ## Hardware
 
-* Apple MacBook Air (M-Series)
-* macOS
+- Apple MacBook Air (M-Series)
+- macOS
 
 ---
 
 ## Development Environment
 
-* Visual Studio Code (VS Code)
-* Docker
-* Terminal for folder mounting
-* SQL Server Extension for VS Code
-* Git
-* GitHub
+- Visual Studio Code (VS Code)
+- SQL Server Extension for VS Code
+- Git
+- GitHub
 
 ---
 
 ## Database Environment
 
-* Microsoft SQL Server
-* SQL Server Database Engine
-* SQL Server running in Docker Container
-* Relational Database Management System (RDBMS)
+- Microsoft SQL Server
+- SQL Server Database Engine
+- SQL Server running in Docker Container
 
 ---
 
-## Containerization & Infrastructure
+## Containerization
 
-* Docker Desktop
-* Containerized SQL Server Environment
-* Local Development Environment
+- Docker Desktop
+- Containerized SQL Server Environment
 
 ---
 
 ## Data Engineering Technologies
 
-* SQL
-* ETL / ELT Processing
-* Data Warehousing
-* Data Architecture
-* Data Integration
-* Data Transformation
-* Data Cleansing
-* Data Validation
-* Data Quality Management
-* Data Modeling
-* Dimensional Modeling
-* Star Schema Design
+- SQL
+- ETL / ELT
+- Data Warehousing
+- Data Integration
+- Data Cleansing
+- Data Validation
+- Data Modeling
+- Dimensional Modeling
+- Star Schema Design
 
 ---
 
-## Data Sources
+## Documentation & Collaboration
 
-* CRM Dataset
-* ERP Dataset
-* CSV Files
-
----
-
-## Documentation & Collaboration Tools
-
-* Draw.io
-* Notion
-* Markdown
-* GitHub
+- Draw.io
+- Notion
+- Markdown
+- GitHub
 
 ---
 
 # 🎯 Skills Demonstrated
 
 ### Data Engineering
-
-* Data Warehousing
-* ETL / ELT Development
-* Data Integration
-* Data Architecture
-* Data Transformation
+- Data Warehousing
+- ETL / ELT Development
+- Data Integration
+- Data Architecture
 
 ### SQL Development
-
-* Stored Procedures
-* Joins
-* CTEs
-* Window Functions
-* Data Validation
-* Query Optimization
+- Joins
+- CTEs
+- Window Functions
+- Stored Procedures
+- Query Optimization
 
 ### Data Modeling
-
-* Dimensional Modeling
-* Star Schema Design
-* Fact & Dimension Modeling
+- Star Schema
+- Fact & Dimension Modeling
 
 ### Analytics
-
-* Business Analytics
-* KPI Development
-* Trend Analysis
-* Performance Analysis
+- Exploratory Data Analysis
+- Trend Analysis
+- Segmentation
+- Business Reporting
 
 ### Professional Skills
-
-* Documentation
-* Version Control
-* Project Structuring
-* Problem Solving
+- Documentation
+- Version Control
+- Problem Solving
 
 ---
 
 # 📂 Repository Structure
 
 ```text
-data-warehouse-project/
+SQL-Project-1-Data-Warehousing/
 │
 ├── datasets/
 │
@@ -287,41 +404,31 @@ data-warehouse-project/
 │   ├── data_architecture.png
 │   ├── data_flow.png
 │   ├── data_model.png
-│   ├── data_catalog.md
-│   └── naming_conventions.md
+│   ├── eda_roadmap.png
 │
 ├── scripts/
 │   ├── bronze/
 │   ├── silver/
 │   └── gold/
 │
-├── tests/
+├── analytics/
+│   ├── 01_database_exploration.sql
+│   ├── 02_dimensions_exploration.sql
+│   ├── 03_date_range_exploration.sql
+│   ├── 04_measures_exploration.sql
+│   ├── 05_magnitude_analysis.sql
+│   ├── 06_ranking_analysis.sql
+│   ├── 07_change_over_time_analysis.sql
+│   ├── 08_cumulative_analysis.sql
+│   ├── 09_performance_analysis.sql
+│   ├── 10_data_segmentation.sql
+│   ├── 11_part_to_whole_analysis.sql
+│   ├── 12_report_customers.sql
+│   └── 13_report_products.sql
 │
 ├── README.md
-├── LICENSE
-└── .gitignore
+└── LICENSE
 ```
-
----
-
-# 🌱 Career Objective
-
-My long-term objective is to build expertise at the intersection of **Business, Human Resources, Analytics, and Technology**.
-
-As an MBA graduate from IIM Ranchi and a professional currently working with DS Group, I am particularly interested in leveraging data to improve decision-making, optimize business processes, and drive organizational performance.
-
-Areas of interest include:
-
-* HR Analytics
-* People Analytics
-* Workforce Analytics
-* Business Analytics
-* Data Analytics
-* Business Intelligence
-* Consulting
-* Data-Driven HR Strategy
-
-Projects like this help me strengthen both technical and analytical capabilities while applying business understanding to real-world problems.
 
 ---
 
@@ -329,15 +436,17 @@ Projects like this help me strengthen both technical and analytical capabilities
 
 **Varun Gautam**
 
-MBA (Human Resource Management) | IIM Ranchi
+MBA (Human Resource Management), IIM Ranchi
 
 HR Professional | Data Analytics Enthusiast | SQL Developer
+
+I am passionate about combining business understanding with analytical capabilities to solve real-world business problems through data-driven decision-making.
 
 ---
 
 # 📬 Connect With Me
 
-📧 Email: [i.am.varungautam@gmail.com](mailto:i.am.varungautam@gmail.com)
+📧 Email: i.am.varungautam@gmail.com
 
 💼 LinkedIn: https://www.linkedin.com/in/iamvarungautam/
 
@@ -345,29 +454,4 @@ HR Professional | Data Analytics Enthusiast | SQL Developer
 
 ---
 
-# 📁 Project Resources
-
-### Architecture & Design
-
-* Data Architecture Diagram:
-  https://github.com/iamvarungautam/SQL-Project-1---Data-Warehousing-/blob/main/docs/data_architecture.png
-
-* Data Flow Diagram:
-  https://github.com/iamvarungautam/SQL-Project-1---Data-Warehousing-/blob/main/docs/data_flow.png
-
-* Data Model (Star Schema):
-  https://github.com/iamvarungautam/SQL-Project-1---Data-Warehousing-/blob/main/docs/data_model.png
-
-### Documentation
-
-* ETL Documentation:
-  https://github.com/iamvarungautam/SQL-Project-1---Data-Warehousing-/blob/main/docs/naming_conventions.md
-
-### Dataset
-
-* Dataset Source:
-  https://github.com/iamvarungautam/SQL-Project-1---Data-Warehousing-/tree/main/datasets
-
----
-
-## ⭐ If you found this project useful, feel free to star the repository and connect with me on LinkedIn.
+⭐ If you found this project useful, feel free to connect with me and explore my other projects.
