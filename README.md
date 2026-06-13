@@ -72,7 +72,6 @@ The Gold Layer is designed using a **Star Schema** model to support analytical r
 
 * Dim Customer
 * Dim Product
-* Dim Date
 
 This dimensional model enables efficient reporting on customer behavior, product performance, and sales trends.
 
@@ -161,7 +160,7 @@ Generated SQL-based analytical insights related to:
 * Revenue Analysis
 * Business KPIs
 
-The final Gold Layer delivers analytics-ready datasets that can be consumed by reporting and visualization tools.
+**The final Gold Layer delivers analytics-ready datasets that can be consumed by reporting and visualization tools.**
 
 ---
 
