@@ -62,7 +62,6 @@ The Gold Layer is built on a clean **Star Schema** optimized for analytical repo
 | `Fact_Sales` | Fact | Core transactional grain — revenue, quantity, orders |
 | `Dim_Customer` | Dimension | Customer attributes, geography, categories |
 | `Dim_Product` | Dimension | Product hierarchy, categories, subcategories |
-| `Dim_Date` | Dimension | Full calendar spine for time-intelligence queries |
 
 This structure enables high-performance slicing across customers, products, and time — the three axes every sales analytics question reduces to.
 
