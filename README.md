@@ -176,6 +176,8 @@ Generated SQL-based analytical insights related to:
 ## Development Environment
 
 * Visual Studio Code (VS Code)
+* Docker
+* Terminal for folder mounting
 * SQL Server Extension for VS Code
 * Git
 * GitHub
