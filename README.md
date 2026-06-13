@@ -109,7 +109,6 @@ The model consists of:
 
 * Customer Dimension
 * Product Dimension
-* Date Dimension
 
 The schema was optimized for analytical querying, reporting performance, and business intelligence use cases.
 
