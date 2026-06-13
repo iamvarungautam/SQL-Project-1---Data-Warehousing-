@@ -1,412 +1,115 @@
-# 🚀 SQL Data Warehouse & Analytics Project
+# 🏗️ SQL Data Warehouse & Analytics — End-to-End Project
 
-## 📌 Overview
-
-This project demonstrates the end-to-end development of a modern Data Warehouse and Analytics solution using Microsoft SQL Server. The project covers the complete data lifecycle, from ingesting raw data from multiple source systems to transforming it into business-ready datasets and generating actionable insights through Exploratory Data Analysis (EDA).
-
-The solution follows the **Medallion Architecture (Bronze → Silver → Gold)** framework and incorporates industry-standard practices in Data Engineering, Data Modeling, Data Quality Management, and Data Analytics.
+> **Building a production-grade Data Warehouse from scratch using Medallion Architecture, Star Schema modeling, and 13-module EDA — entirely in SQL.**
 
 ---
 
-## 🎯 Project Objectives
+## 📌 What This Project Is
 
-- Build a scalable Data Warehouse using SQL Server
-- Integrate CRM and ERP datasets into a unified analytical model
-- Develop ETL/ELT pipelines for data processing
-- Perform data cleansing and quality validation
-- Design dimensional models using Star Schema principles
-- Conduct Exploratory Data Analysis (EDA)
-- Generate business-ready insights for decision-making
+This is a **full-lifecycle data engineering and analytics project** built on Microsoft SQL Server. Starting from raw, disconnected CRM and ERP data, I designed and implemented a complete analytical system — including ETL pipelines, data quality layers, dimensional modeling, and business-insight generation.
+
+No drag-and-drop tools. No BI shortcuts. Pure SQL engineering.
 
 ---
 
-# 🏗️ Phase 1 — Data Warehousing
+## 🎯 What I Built
 
-## Data Architecture
-
-![Data Architecture](docs/data_architecture.png)
-
-The project follows a Medallion Architecture consisting of:
-
-### Bronze Layer
-- Raw data ingestion from source systems
-- Preserves source data in its original format
-- Supports auditability and traceability
-
-### Silver Layer
-- Data cleansing and standardization
-- Data quality validation
-- Business rule implementation
-- Data enrichment and transformation
-
-### Gold Layer
-- Business-ready analytical datasets
-- Dimensional modeling
-- Optimized reporting and analytics structures
+| Layer | What Happened Here |
+|---|---|
+| 🥉 **Bronze** | Raw ingestion from CRM + ERP — unchanged, traceable, auditable |
+| 🥈 **Silver** | Cleansing, standardization, deduplication, business rule validation |
+| 🥇 **Gold** | Star Schema dimensional model — analytics-ready, query-optimized |
 
 ---
 
-## 🔄 Data Flow
+## ⭐ Data Model — Star Schema
 
-![Data Flow](docs/data_flow.png)
+```
+              ┌──────────────┐
+              │  Dim Customer │
+              └──────┬───────┘
+                     │
+┌─────────────┐      │      ┌─────────────┐
+│  Dim Product ├──── Fact ────┤   Dim Date  │
+└─────────────┘    Sales    └─────────────┘
+```
 
-### ETL / ELT Workflow
-
-1. Extract data from CRM and ERP source systems
-2. Load raw data into Bronze Layer
-3. Cleanse and standardize data in Silver Layer
-4. Integrate business entities across systems
-5. Create dimensional models in Gold Layer
-6. Deliver analytics-ready datasets
-
----
-
-## ⭐ Data Model
-
-![Star Schema](docs/data_model.png)
-
-The Gold Layer is designed using a Star Schema model optimized for analytical reporting.
-
-### Fact Table
-- Fact Sales
-
-### Dimension Tables
-- Dim Customer
-- Dim Product
-- Dim Date
-
-This structure enables high-performance analytical querying and reporting.
+The Gold Layer is built on a clean **Star Schema** with:
+- `Fact_Sales` — transactional grain
+- `Dim_Customer` — customer attributes + geography
+- `Dim_Product` — product hierarchy, categories, subcategories
+- `Dim_Date` — full calendar spine for time-intelligence queries
 
 ---
 
-## ⚙️ Data Engineering Components
+## 📊 Phase 2 — Exploratory Data Analysis (13 Modules)
 
-### Data Architecture Design
-- Medallion Architecture
-- Layered Data Processing
-- Separation of Concerns
+After the warehouse was built, I ran a structured EDA across 13 analytical scripts:
 
-### ETL / ELT Processing
-- Data Extraction
-- Data Loading
-- Data Transformation
-
-### Data Cleansing
-- Duplicate Handling
-- Missing Value Treatment
-- Data Standardization
-- Business Rule Validation
-
-### Data Integration
-- CRM + ERP Integration
-- Business Key Reconciliation
-- Master Data Alignment
-
-### Data Modeling
-- Dimensional Modeling
-- Fact & Dimension Design
-- Star Schema Implementation
+| # | Module | What I Analyzed |
+|---|---|---|
+| 01 | Database Exploration | Schema inventory, table profiling, record counts |
+| 02 | Dimensions Exploration | Customer geography, product hierarchy |
+| 03 | Date Range Exploration | Temporal coverage, earliest/latest transactions |
+| 04 | Measures Exploration | Revenue, orders, quantity, average selling price |
+| 05 | Magnitude Analysis | Sales by category, region, and product |
+| 06 | Ranking Analysis | Top/bottom customers and products via `RANK()`, `DENSE_RANK()` |
+| 07 | Change Over Time | Monthly trends, revenue growth, seasonality |
+| 08 | Cumulative Analysis | Running totals — revenue and orders |
+| 09 | Performance Analysis | Product and customer performance vs. benchmarks |
+| 10 | Data Segmentation | High / Medium / Low value customer tiers |
+| 11 | Part-to-Whole Analysis | Category and customer revenue share % |
+| 12 | Customer Report | Full customer behavioral report — revenue, orders, ranking |
+| 13 | Product Report | Full product performance report — sales volume, category analysis |
 
 ---
 
-# 📊 Phase 2 — Exploratory Data Analysis (EDA)
+## 🛠️ Technical Stack
 
-After building the Data Warehouse and Gold Layer, the next phase focused on analyzing curated business-ready data to uncover patterns, trends, and actionable insights.
-
-## EDA Framework
-
-## 1️⃣ Database Exploration
-
-Objectives:
-- Understand database structure
-- Explore tables and schemas
-- Validate dataset readiness
-
-Deliverables:
-- Database inventory
-- Table overview
-- Record counts
+| Area | Tools |
+|---|---|
+| **Database** | Microsoft SQL Server (Dockerized) |
+| **Development** | VS Code + SQL Server Extension |
+| **Containerization** | Docker Desktop |
+| **Version Control** | Git + GitHub |
+| **Design & Docs** | Draw.io, Notion, Markdown |
 
 ---
 
-## 2️⃣ Dimensions Exploration
+## 💡 SQL Skills Demonstrated
 
-Analyzed business dimensions including:
+```sql
+-- Representative techniques used across this project:
 
-### Customer Dimension
-- Customer Distribution
-- Geographic Analysis
-
-### Product Dimension
-- Product Categories
-- Product Subcategories
-
-Techniques:
-- DISTINCT Analysis
-- Category Exploration
-- Data Profiling
+✅ CTEs (multi-step transformations)
+✅ Window Functions — RANK(), DENSE_RANK(), ROW_NUMBER(), SUM() OVER()
+✅ Stored Procedures (ETL automation)
+✅ Joins — multi-table CRM + ERP integration
+✅ Aggregations — SUM, AVG, COUNT with GROUP BY
+✅ Conditional logic — CASE WHEN for segmentation
+✅ Date functions — trend and period analysis
+✅ Data Quality checks — duplicate detection, null handling
+```
 
 ---
 
-## 3️⃣ Date Exploration
+## 📂 Repository Structure
 
-Analyzed temporal coverage of data.
-
-Metrics:
-- Earliest Transaction Date
-- Latest Transaction Date
-- Historical Coverage Period
-
----
-
-## 4️⃣ Measures Exploration
-
-Analyzed key business metrics:
-
-- Total Sales
-- Total Orders
-- Quantity Sold
-- Average Selling Price
-
-SQL Functions Used:
-- SUM()
-- AVG()
-- COUNT()
-
----
-
-## 5️⃣ Magnitude Analysis
-
-Business performance across dimensions:
-
-Examples:
-- Sales by Product Category
-- Revenue by Customer
-- Orders by Region
-- Quantity by Product
-
----
-
-## 6️⃣ Ranking Analysis
-
-Top and Bottom Performer Identification
-
-Examples:
-
-### Customers
-- Top Revenue Customers
-- Bottom Revenue Customers
-
-### Products
-- Best-Selling Products
-- Lowest Performing Products
-
-SQL Concepts:
-- RANK()
-- DENSE_RANK()
-- ROW_NUMBER()
-
----
-
-## 7️⃣ Change Over Time Analysis
-
-Trend analysis including:
-
-- Monthly Sales Trends
-- Revenue Growth
-- Seasonal Performance
-
----
-
-## 8️⃣ Cumulative Analysis
-
-Running calculations:
-
-- Running Revenue
-- Running Orders
-- Cumulative Performance Tracking
-
----
-
-## 9️⃣ Performance Analysis
-
-Business performance evaluation:
-
-- Product Performance
-- Customer Performance
-- Revenue Contribution
-
----
-
-## 🔟 Data Segmentation
-
-Customer and Product Segmentation
-
-Examples:
-- High Value Customers
-- Medium Value Customers
-- Low Value Customers
-
----
-
-## 1️⃣1️⃣ Part-to-Whole Analysis
-
-Contribution Analysis
-
-Examples:
-- Category Contribution %
-- Product Contribution %
-- Customer Revenue Share %
-
----
-
-## 1️⃣2️⃣ Customer Report
-
-Customer-focused business report including:
-
-- Revenue
-- Orders
-- Purchase Behavior
-- Customer Ranking
-
----
-
-## 1️⃣3️⃣ Product Report
-
-Product-focused business report including:
-
-- Revenue
-- Sales Volume
-- Product Ranking
-- Category Performance
-
----
-
-# 📈 Sample Business Insights
-
-### Customer Insights
-- Identify top revenue-generating customers
-- Analyze customer contribution to total revenue
-- Segment customers by value
-
-### Product Insights
-- Best-performing products
-- Underperforming products
-- Revenue contribution by category
-
-### Sales Insights
-- Revenue trends over time
-- Seasonal sales patterns
-- Growth opportunities
-
----
-
-# 🛠️ Technology Stack & Environment Setup
-
-## Hardware
-
-- Apple MacBook Air (M-Series)
-- macOS
-
----
-
-## Development Environment
-
-- Visual Studio Code (VS Code)
-- Docker
-- SQL Server Extension for VS Code
-- Git
-- GitHub
-
----
-
-## Database Environment
-
-- Microsoft SQL Server
-- SQL Server Database Engine
-- SQL Server running in Docker Container
-
----
-
-## Containerization
-
-- Docker Desktop
-- Containerized SQL Server Environment
-
----
-
-## Data Engineering Technologies
-
-- SQL
-- ETL / ELT
-- Data Warehousing
-- Data Integration
-- Data Cleansing
-- Data Validation
-- Data Modeling
-- Dimensional Modeling
-- Star Schema Design
-
----
-
-## Documentation & Collaboration
-
-- Draw.io
-- Notion
-- Markdown
-- GitHub
-
----
-
-# 🎯 Skills Demonstrated
-
-### Data Engineering
-- Data Warehousing
-- ETL / ELT Development
-- Data Integration
-- Data Architecture
-
-### SQL Development
-- Joins
-- CTEs
-- Window Functions
-- Stored Procedures
-- Query Optimization
-
-### Data Modeling
-- Star Schema
-- Fact & Dimension Modeling
-
-### Analytics
-- Exploratory Data Analysis
-- Trend Analysis
-- Segmentation
-- Business Reporting
-
-### Professional Skills
-- Documentation
-- Version Control
-- Problem Solving
-
----
-
-# 📂 Repository Structure
-
-```text
+```
 SQL-Project-1-Data-Warehousing/
 │
-├── datasets/
+├── datasets/                        # Source CRM + ERP data
 │
 ├── docs/
-│   ├── data_architecture.png
-│   ├── data_flow.png
-│   ├── data_model.png
-│   ├── eda_roadmap.png
+│   ├── data_architecture.png        # Medallion architecture diagram
+│   ├── data_flow.png                # ETL flow visualization
+│   ├── data_model.png               # Star Schema diagram
+│   └── eda_roadmap.png              # EDA module map
 │
 ├── scripts/
-│   ├── bronze/
-│   ├── silver/
-│   └── gold/
+│   ├── bronze/                      # Raw ingestion scripts
+│   ├── silver/                      # Cleansing + transformation
+│   └── gold/                        # Dimensional model creation
 │
 ├── analytics/
 │   ├── 01_database_exploration.sql
@@ -429,26 +132,26 @@ SQL-Project-1-Data-Warehousing/
 
 ---
 
-# 👨‍💼 About Me
+## 🔍 Key Business Questions This Project Answers
 
-**Varun Gautam**
-
-MBA (Human Resource Management), IIM Ranchi
-
-HR Professional | Data Analytics Enthusiast | SQL Developer
-
-I am passionate about combining business understanding with analytical capabilities to solve real-world business problems through data-driven decision-making.
+- Who are the **top revenue-generating customers** and what's their share of total revenue?
+- Which **product categories** drive the most sales — and which underperform?
+- How has **revenue trended month-over-month** and where are the seasonal peaks?
+- What does the **customer value distribution** look like across high/medium/low tiers?
+- Which products are **consistently bottom performers** worth deprioritizing?
 
 ---
 
-# 📬 Connect With Me
+## 👨‍💼 About Me
 
-📧 Email: i.am.varungautam@gmail.com
+**Varun Gautam** — MBA (HR + Business Analytics), IIM Ranchi
 
-💼 LinkedIn: https://www.linkedin.com/in/iamvarungautam/
+I'm an HR professional with a deep focus on analytics. This project reflects my conviction that the best business decisions come from well-engineered data — not gut feel. I built this end-to-end to sharpen my SQL and data engineering skills beyond the classroom.
 
-💻 GitHub: https://github.com/iamvarungautam
+📧 i.am.varungautam@gmail.com  
+💼 [LinkedIn](https://www.linkedin.com/in/iamvarungautam/)  
+💻 [GitHub](https://github.com/iamvarungautam)
 
 ---
 
-⭐ If you found this project useful, feel free to connect with me and explore my other projects.
+> ⭐ If this project is interesting to you, let's connect.
