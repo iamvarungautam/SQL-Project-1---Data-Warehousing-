@@ -157,11 +157,6 @@ The Gold Layer is built on a clean **Star Schema** optimized for analytical repo
 
 # 📊 Phase 2 — Exploratory Data Analysis
 
-<p align="center">
-  <img src="docs/eda_roadmap.png" width="900">
-</p>
-
-<br>
 
 After building the warehouse, I ran a **structured 13-module EDA** on the Gold Layer — moving from database validation all the way to reusable business reports.
 
