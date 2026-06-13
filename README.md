@@ -317,6 +317,7 @@ Product-focused business report including:
 ## Development Environment
 
 - Visual Studio Code (VS Code)
+- Docker
 - SQL Server Extension for VS Code
 - Git
 - GitHub
