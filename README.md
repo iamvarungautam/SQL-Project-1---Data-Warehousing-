@@ -115,10 +115,6 @@ After building the Data Warehouse and Gold Layer, the next phase focused on anal
 
 ## EDA Framework
 
-![EDA Roadmap](docs/eda_roadmap.png)
-
----
-
 ## 1️⃣ Database Exploration
 
 Objectives:
