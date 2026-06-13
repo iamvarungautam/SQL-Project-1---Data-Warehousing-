@@ -1,153 +1,173 @@
-# 🌟 About Me
+# 🚀 SQL Data Warehouse & Analytics Project
 
-Hi, I'm **Varun Gautam**.
+## 📌 Project Overview
 
-I am an HR professional with an **MBA in Human Resource Management from IIM Ranchi** and currently working with **DS Group**. My professional journey has strengthened my understanding of business operations, organizational dynamics, and strategic decision-making. Alongside my HR background, I have developed a strong interest in Data Analytics and Business Intelligence, recognizing the growing role of data in driving organizational success.
+This project demonstrates the design and implementation of a modern **Data Warehouse and Analytics Solution** using Microsoft SQL Server. The objective was to build an end-to-end data warehousing pipeline capable of integrating data from multiple business systems, transforming raw data into trusted business information, and delivering analytics-ready datasets for reporting and decision-making.
 
-To build expertise at the intersection of business and analytics, I have been actively developing hands-on skills in **SQL, Data Warehousing, Data Modeling, ETL/ELT Processing, and Data Analytics** through practical projects and real-world business datasets. My objective is to complement business understanding with technical capabilities that enable data-driven problem solving and decision-making.
-
-This repository showcases one of my flagship projects—a complete end-to-end **Data Warehouse and Analytics Solution** built using SQL Server. The project demonstrates modern data engineering concepts, industry-standard warehousing practices, and analytical modeling techniques used to transform raw business data into actionable insights.
+The solution follows the **Medallion Architecture (Bronze → Silver → Gold)** framework and showcases industry-standard practices in Data Engineering, Data Modeling, Data Quality Management, and Analytics.
 
 ---
 
-# 🚀 Project Overview
+## 🏗️ Data Architecture
 
-## Objective
+<p align="center">
+  <img src="docs/data_architecture.png" width="900">
+</p>
 
-The objective of this project was to design and develop a modern Data Warehouse that consolidates data from multiple business systems into a centralized analytical repository. The solution transforms raw operational data into structured, business-ready information that supports reporting, analytics, and decision-making.
+The project follows a layered Medallion Architecture:
 
-The project follows the **Medallion Architecture (Bronze → Silver → Gold)** framework and covers the complete data lifecycle, including ingestion, transformation, integration, modeling, governance, and analytics.
-
----
-
-## What I Built
-
-### 🏗️ Data Architecture
-
-Designed and implemented a scalable Data Warehouse architecture using a Medallion framework consisting of:
-
-#### Bronze Layer
+### Bronze Layer
 
 * Raw data ingestion from source systems
-* Storage of source data in its original format
-* Traceability and auditability of source records
+* Preserves source data in its original format
+* Supports auditability and traceability
 
-#### Silver Layer
+### Silver Layer
 
 * Data cleansing and standardization
 * Data quality validation
 * Business rule implementation
 * Data enrichment and transformation
 
-#### Gold Layer
+### Gold Layer
 
-* Business-ready analytical models
-* Dimensional modeling using Star Schema
-* Optimized datasets for reporting and analytics
+* Business-ready analytical datasets
+* Dimensional modeling
+* Optimized reporting and analytics structures
 
-This layered architecture ensures scalability, maintainability, data quality, and clear separation of responsibilities across the data pipeline.
-
----
-
-### ⚙️ ETL / ELT Development
-
-Developed end-to-end SQL-based ETL/ELT pipelines to:
-
-* Extract data from CRM and ERP systems
-* Load source data into staging and Bronze layers
-* Cleanse and transform data in Silver layer
-* Integrate business entities across systems
-* Build analytical models in Gold layer
-
-The pipeline structure closely mirrors enterprise-grade Data Engineering workflows used in modern organizations.
+This architecture ensures scalability, maintainability, and clear separation of responsibilities across the data pipeline.
 
 ---
 
-### 🧹 Data Quality & Transformation
+## 🔄 Data Flow
 
-Implemented comprehensive data cleansing and validation processes including:
+<p align="center">
+  <img src="docs/data_flow.png" width="900">
+</p>
 
-* Duplicate record identification and removal
-* Missing value handling
-* Data standardization
-* Data type validation
-* Business rule enforcement
-* Derived attribute creation
+The data pipeline integrates CRM and ERP datasets through a structured ETL/ELT workflow:
+
+1. Data Extraction from source systems
+2. Raw Data Loading into Bronze Layer
+3. Data Cleansing & Transformation in Silver Layer
+4. Data Integration & Modeling
+5. Creation of Analytics-Ready Gold Layer
+6. Business Reporting & Insights
+
+---
+
+## ⭐ Data Model (Star Schema)
+
+<p align="center">
+  <img src="docs/data_model.png" width="900">
+</p>
+
+The Gold Layer is designed using a **Star Schema** model to support analytical reporting and high-performance querying.
+
+### Fact Table
+
+* Fact Sales
+
+### Dimension Tables
+
+* Dim Customer
+* Dim Product
+* Dim Date
+
+This dimensional model enables efficient reporting on customer behavior, product performance, and sales trends.
+
+---
+
+# 🎯 Project Objectives
+
+The primary objectives of this project were:
+
+* Build a scalable Data Warehouse using SQL Server
+* Integrate CRM and ERP datasets into a unified analytical model
+* Implement ETL/ELT pipelines for data processing
+* Perform data cleansing and quality validation
+* Design dimensional models using Star Schema principles
+* Generate business-ready datasets for analytics and reporting
+
+---
+
+# ⚙️ Key Components
+
+## 1. Data Architecture Design
+
+Designed a Medallion Architecture consisting of Bronze, Silver, and Gold layers to support data ingestion, transformation, and analytics.
+
+---
+
+## 2. ETL / ELT Pipeline Development
+
+Developed SQL-based ETL/ELT processes to:
+
+* Extract data from source systems
+* Load raw datasets into staging environments
+* Cleanse and standardize business data
+* Integrate data across systems
+* Build analytical models
+
+---
+
+## 3. Data Quality Management
+
+Implemented:
+
+* Duplicate handling
+* Missing value treatment
+* Data validation
+* Standardization rules
 * Data enrichment
+* Business rule enforcement
 
-These processes improved the reliability, consistency, and usability of analytical datasets.
-
----
-
-### 🔄 Data Integration
-
-Integrated customer, product, and sales information originating from multiple source systems.
-
-Key activities included:
-
-* Source system mapping
-* Business key reconciliation
-* Cross-system entity matching
-* Data consolidation
-* Master data alignment
-
-This resulted in a unified and trusted source of business information for analytics and reporting.
+These processes improved the reliability and consistency of analytical outputs.
 
 ---
 
-### 📊 Data Modeling
+## 4. Data Integration
 
-Designed and implemented a dimensional model using the **Star Schema** approach.
+Integrated customer, product, and sales information from multiple systems by:
 
-The model consists of:
+* Reconciling business keys
+* Mapping source entities
+* Aligning master data
+* Consolidating datasets
 
-#### Fact Tables
-
-* Sales Fact
-
-#### Dimension Tables
-
-* Customer Dimension
-* Product Dimension
-
-The schema was optimized for analytical querying, reporting performance, and business intelligence use cases.
+Resulting in a centralized and trusted source of business information.
 
 ---
 
-### 📈 Analytics & Business Insights
+## 5. Dimensional Modeling
 
-Developed SQL-based analytical solutions to evaluate:
+Designed analytical structures using:
+
+* Fact Tables
+* Dimension Tables
+* Star Schema Design
+
+Optimized for reporting and business intelligence use cases.
+
+---
+
+## 6. Analytics & Reporting
+
+Generated SQL-based analytical insights related to:
 
 * Customer Behavior
 * Product Performance
 * Sales Trends
 * Revenue Analysis
 * Business KPIs
-* Operational Performance Metrics
 
-The final Gold Layer provides analytics-ready datasets that can be seamlessly consumed by BI and visualization tools.
-
----
-
-### 📚 Documentation & Governance
-
-Created comprehensive project documentation including:
-
-* Data Architecture Diagrams
-* Data Flow Diagrams
-* Data Models
-* Data Catalog
-* Naming Standards
-* ETL Documentation
-* Repository Documentation
-
-Version control and project management were maintained using Git and GitHub following software development best practices.
+The final Gold Layer delivers analytics-ready datasets that can be consumed by reporting and visualization tools.
 
 ---
 
 # 🛠️ Technology Stack & Environment Setup
 
-## Hardware Environment
+## Hardware
 
 * Apple MacBook Air (M-Series)
 * macOS
@@ -167,7 +187,7 @@ Version control and project management were maintained using Git and GitHub foll
 
 * Microsoft SQL Server
 * SQL Server Database Engine
-* SQL Server running via Docker Container on macOS
+* SQL Server running in Docker Container
 * Relational Database Management System (RDBMS)
 
 ---
@@ -175,9 +195,8 @@ Version control and project management were maintained using Git and GitHub foll
 ## Containerization & Infrastructure
 
 * Docker Desktop
-* Docker Containers
-* Local SQL Server Deployment
-* Containerized Development Environment
+* Containerized SQL Server Environment
+* Local Development Environment
 
 ---
 
@@ -188,11 +207,11 @@ Version control and project management were maintained using Git and GitHub foll
 * Data Warehousing
 * Data Architecture
 * Data Integration
+* Data Transformation
 * Data Cleansing
 * Data Validation
-* Data Transformation
-* Data Loading
 * Data Quality Management
+* Data Modeling
 * Dimensional Modeling
 * Star Schema Design
 
@@ -211,34 +230,84 @@ Version control and project management were maintained using Git and GitHub foll
 * Draw.io
 * Notion
 * Markdown
-* GitHub Documentation
+* GitHub
 
 ---
 
 # 🎯 Skills Demonstrated
 
-* SQL Development
+### Data Engineering
+
 * Data Warehousing
-* Data Architecture
-* ETL / ELT Engineering
+* ETL / ELT Development
 * Data Integration
+* Data Architecture
 * Data Transformation
-* Data Cleansing
-* Data Quality Management
-* Data Modeling
+
+### SQL Development
+
+* Stored Procedures
+* Joins
+* CTEs
+* Window Functions
+* Data Validation
+* Query Optimization
+
+### Data Modeling
+
 * Dimensional Modeling
 * Star Schema Design
-* Analytical Query Development
+* Fact & Dimension Modeling
+
+### Analytics
+
 * Business Analytics
-* Documentation & Governance
-* Git Version Control
-* GitHub Repository Management
+* KPI Development
+* Trend Analysis
+* Performance Analysis
+
+### Professional Skills
+
+* Documentation
+* Version Control
+* Project Structuring
+* Problem Solving
+
+---
+
+# 📂 Repository Structure
+
+```text
+data-warehouse-project/
+│
+├── datasets/
+│
+├── docs/
+│   ├── data_architecture.png
+│   ├── data_flow.png
+│   ├── data_model.png
+│   ├── data_catalog.md
+│   └── naming_conventions.md
+│
+├── scripts/
+│   ├── bronze/
+│   ├── silver/
+│   └── gold/
+│
+├── tests/
+│
+├── README.md
+├── LICENSE
+└── .gitignore
+```
 
 ---
 
 # 🌱 Career Objective
 
-My long-term goal is to build expertise at the intersection of **Business, Human Resources, Analytics, and Technology**. I am particularly interested in leveraging data to solve business challenges, improve decision-making, and create organizational impact.
+My long-term objective is to build expertise at the intersection of **Business, Human Resources, Analytics, and Technology**.
+
+As an MBA graduate from IIM Ranchi and a professional currently working with DS Group, I am particularly interested in leveraging data to improve decision-making, optimize business processes, and drive organizational performance.
 
 Areas of interest include:
 
@@ -251,13 +320,21 @@ Areas of interest include:
 * Consulting
 * Data-Driven HR Strategy
 
-Through projects like this, I continue to strengthen my analytical, technical, and business capabilities while building a foundation for data-driven leadership roles.
+Projects like this help me strengthen both technical and analytical capabilities while applying business understanding to real-world problems.
+
+---
+
+# 👨‍💼 About Me
+
+**Varun Gautam**
+
+MBA (Human Resource Management) | IIM Ranchi
+
+HR Professional | Data Analytics Enthusiast | SQL Developer
 
 ---
 
 # 📬 Connect With Me
-
-**Varun Gautam**
 
 📧 Email: [i.am.varungautam@gmail.com](mailto:i.am.varungautam@gmail.com)
 
@@ -280,16 +357,16 @@ Through projects like this, I continue to strengthen my analytical, technical, a
 * Data Model (Star Schema):
   https://github.com/iamvarungautam/SQL-Project-1---Data-Warehousing-/blob/main/docs/data_model.png
 
----
-
 ### Documentation
 
 * ETL Documentation:
   https://github.com/iamvarungautam/SQL-Project-1---Data-Warehousing-/blob/main/docs/naming_conventions.md
 
----
-
-### Datasets
+### Dataset
 
 * Dataset Source:
   https://github.com/iamvarungautam/SQL-Project-1---Data-Warehousing-/tree/main/datasets
+
+---
+
+## ⭐ If you found this project useful, feel free to star the repository and connect with me on LinkedIn.
